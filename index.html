@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Display</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+
+      #dress {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .product {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 250px;
+        transition: transform 0.3s;
+      }
+
+      .product img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .product h2 {
+        font-size: 1.5em;
+        margin: 10px;
+        color: #333;
+      }
+
+      .product p {
+        margin: 5px 10px;
+        color: #666;
+      }
+
+      .product p:last-child {
+        font-weight: bold;
+        color: #333;
+      }
+
+      .product:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (max-width: 600px) {
+        .product {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="dress"></div>
+
+    <script>
+      var product = [
+        {
+          photo: "img/pink1.jpg",
+          qty: 50,
+          price: 100,
+          name: "Pink dress",
+          description: "A beautiful pink dress",
+          color: "pink",
+          size: "M",
+        },
+        {
+          photo: "img/pink2.jpg",
+          qty: 50,
+          price: 100,
+          name: "Pink dress",
+          description: "A beautiful pink dress",
+          color: "pink",
+          size: "M",
+        },
+        {
+          photo: "img/pink3.jpg",
+          qty: 50,
+          price: 100,
+          name: "Pink dress",
+          description: "A beautiful pink dress",
+          color: "pink",
+          size: "M",
+        },
+        {
+          photo: "img/pink4.jpg",
+          qty: 50,
+          price: 100,
+          name: "Pink dress",
+          description: "A beautiful pink dress",
+          color: "pink",
+          size: "M",
+        },
+      ];
+
+      var item = "";
+      for (var i = 0; i < product.length; i++) {
+        item += "<div class='product'>";
+        item += "<img src='" + product[i].photo + "' alt='product' />";
+        item += "<h2>" + product[i].name + "</h2>";
+        item += "<p>" + product[i].description + "</p>";
+        item += "<p>Color: " + product[i].color + "</p>";
+        item += "<p>Size: " + product[i].size + "</p>";
+        item += "<p>Price: $" + product[i].price + "</p>";
+        item += "<p>Quantity: " + product[i].qty + "</p>";
+        item += "</div>";
+      }
+
+      document.getElementById("dress").innerHTML = item;
+    </script>
+  </body>
+</html>
